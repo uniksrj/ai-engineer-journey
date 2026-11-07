@@ -65,8 +65,39 @@ def is_palindrome(string : str) -> bool:
     
     return False
 
-print(is_palindrome("Level"))  
-print(is_palindrome("python")) 
+# print(is_palindrome("Level"))  
+# print(is_palindrome("python")) 
+
+
+def top_student(marks :dict[str, int]) -> str:
+    if not marks:
+        return ""
+
+    maxVal = float("-inf") 
+    top_student = ""
+    for value in marks:
+        if maxVal < marks[value]:
+            maxVal = marks[value]
+            top_student = value 
+
+    return top_student
+
+    # pass
+
+students = {
+    "Suraj": 85,
+    "Ravi": 92,
+    "Neha": 78,
+}
+
+# print(top_student(students))  # Ravi
+
+
+def remove_duplicates(numbers : list[int]) -> list[int]:
+    return list(set(numbers))
+    
+
+print(remove_duplicates([1, 2, 2, 3, 1, 4]))  # [1, 2, 3, 4]
 
 
 def main() -> None:
